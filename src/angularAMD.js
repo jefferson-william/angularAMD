@@ -429,7 +429,10 @@ define(function () {
                         provide.value(name, constructor);
                         return this;
                     },
-                    animation: angular.bind(animateProvider, animateProvider.register)
+                    animation: function(name, constructor) {
+                        angular.bind(animateProvider, animateProvider.register);
+                        return this;
+                    }
                 });
                 angular.extend(alt_app, onDemandLoader);
 
