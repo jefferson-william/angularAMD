@@ -398,7 +398,6 @@ define(function () {
                         return this;
                     },
                     factory : function(name, constructor) {
-                        // console.log('onDemandLoader.factory called for ' + name);
                         provide.factory(name, constructor);
                         return this;
                     },
@@ -414,7 +413,10 @@ define(function () {
                         provide.value(name, constructor);
                         return this;
                     },
-                    animation: angular.bind(animateProvider, animateProvider.register)
+                    animation : function(name, constructor) {
+                        provide.value(name, constructor);
+                        return this;
+                    }
                 });
                 angular.extend(alt_app, onDemandLoader);
 
