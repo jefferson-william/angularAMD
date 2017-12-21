@@ -240,7 +240,7 @@ define(function () {
                         cf_method = cf[1],
                         cf_args = cf[2];
 
-                    config_injector[cf_method].apply(null, cf_args);
+                    config_injector[cf_method] && config_injector[cf_method].apply(null, cf_args);
                 }
             }
 
